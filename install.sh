@@ -48,8 +48,8 @@ sudo make clean install
 cd $SCRIPTPATH
 
 # kitty terminal
-rm -rf ~/.config/kitty
-ln -s .config/kitty ~/.config/kitty
+rm -rf ~/.config/kitty/kitty.conf
+ln -s $SCRIPTPATH/.config/kitty/kitty.conf ~/.config/kitty/kitty.conf
 
 # zsh / prezto
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
