@@ -10,6 +10,7 @@ SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
 # update pacman
 sudo pacman -Syu --noconfirm
+sudo sed -i 's/#Color/Color/g' /etc/pacman.conf
 
 # setup yay
 sudo mkdir -p /opt/yay
@@ -20,7 +21,7 @@ makepkg -si --noconfirm
 cd $SCRIPTPATH
 
 # install packages
-yay -Sy base-devel git curl wget htop vim xorg xorg-server xorg-server-common xorg-xinit xorg-xrandr xorg-xmodmap aom aria2 cifs-utils discord docker docker-compose exfat-utils feh ffmpeg firefox freerdp gvfs gvfs-nfs gvfs-smb gzip handbrake kitty krita lutris man-db man-pages mangohud mediainfo mpv neofetch networkmanager-openvpn nm-connection-editor nmap noto-fonts noto-fonts-cjk noto-fonts-emoji obs-studio openvpn pamixer piper pipewire pipewire-alsa pipewire-jack pipewire-jack-dropin pipewire-media-session pipewire-pulse playerctl python qemu qjackctl rav1e remmina rsync seafile seafile-client signal-desktop smbclient spotify steam svt-av1 telegram-desktop thunar thunderbird tigervnc tmux traceroute ttf-hack unrar unzip virt-manager virt-viewer visual-studio-code-bin wireguard-tools woeusb zsh pavucontrol pactl
+yay -Sy base-devel git curl wget htop vim xorg-server xorg-server-common xorg-xinit xorg-xrandr xorg-xmodmap aom aria2 cifs-utils discord docker docker-compose exfat-utils feh ffmpeg firefox freerdp gvfs gvfs-nfs gvfs-smb gzip handbrake kitty krita lutris man-db man-pages mangohud mediainfo mpv neofetch networkmanager-openvpn nm-connection-editor nmap noto-fonts noto-fonts-cjk noto-fonts-emoji obs-studio openvpn pamixer piper pipewire pipewire-alsa pipewire-jack pipewire-jack-dropin pipewire-media-session pipewire-pulse playerctl python qemu qjackctl rav1e remmina rsync seafile seafile-client signal-desktop smbclient spotify steam svt-av1 telegram-desktop thunar thunderbird tigervnc tmux traceroute ttf-hack unrar unzip virt-manager virt-viewer visual-studio-code-bin wireguard-tools woeusb zsh pavucontrol pactl
 
 # audio
 systemctl --user enable --now pipewire.service
@@ -52,9 +53,9 @@ rm -rf ~/.config/kitty/kitty.conf
 ln -s $SCRIPTPATH/.config/kitty/kitty.conf ~/.config/kitty/kitty.conf
 
 # zsh / prezto
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-/bin/zsh -dfi -c 'setopt EXTENDED_GLOB && for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"; done'
-echo "export PATH=\$PATH:/home/max/.local/bin" >> ~/.zshrc
-echo "alias ssh=\"kitty +kitten ssh\"" >> ~/.zshrc
+git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
+ln -s ~/.zprezto/runcoms/z* ~/
+echo 'export PATH=\$PATH:/home/max/.local/bin' >> ~/.zshrc
+echo 'alias ssh="kitty +kitten ssh"' >> ~/.zshrc
 chsh -s /bin/zsh
 cd $SCRIPTPATH
