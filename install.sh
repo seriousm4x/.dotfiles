@@ -8,11 +8,11 @@ fi
 # set script path
 SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
-# update pacman
+# pacman
 sudo sed -i 's/#Color/Color/g' /etc/pacman.conf
 sudo pacman -Syu --noconfirm
 
-# setup yay
+# yay
 sudo mkdir -p /opt/yay
 sudo chown $(whoami). /opt/yay
 git clone https://aur.archlinux.org/yay.git /opt/yay
@@ -68,3 +68,7 @@ if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   exec startx
 fi
 EOT
+
+echo ""
+echo "Installation done. Please reboot."
+echo ""
