@@ -61,3 +61,10 @@ curl 'https://gist.githubusercontent.com/seriousm4x/b93b2af2c226b82d755309f87ef9
 echo 'export PATH=$PATH:/home/max/.local/bin' >> ~/.zshrc
 echo 'alias ssh="kitty +kitten ssh"' >> ~/.zshrc
 chsh -s /bin/zsh
+
+# startx at login
+cat <<EOT >> ~/.zprofile
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+  exec startx
+fi
+EOT
