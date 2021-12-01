@@ -58,6 +58,6 @@ ln -s ~/.zprezto/runcoms/zprofile ~/.zprofile
 ln -s ~/.zprezto/runcoms/zshenv ~/.zshenv
 ln -s ~/.zprezto/runcoms/zshrc ~/.zshrc
 curl 'https://gist.githubusercontent.com/seriousm4x/b93b2af2c226b82d755309f87ef936d3/raw/5cb4fd37b7984aed61997a157429cc032b90b297/.zpreztorc' -o ~/.zpreztorc
-echo 'export PATH=\$PATH:/home/max/.local/bin' >> ~/.zshrc
+echo 'export PATH=$PATH:/home/max/.local/bin' >> ~/.zshrc
 echo 'alias ssh="kitty +kitten ssh"' >> ~/.zshrc
 chsh -s /bin/zsh
