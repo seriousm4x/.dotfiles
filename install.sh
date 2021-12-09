@@ -33,8 +33,6 @@ stow dmenu dwm dwm-bar kitty vim xorg
 # suckless stuff
 cd ~/.config/dwm
 sudo make clean install
-cd ~/.config/dwm-bar
-sudo make clean install
 cd ~/.config/dmenu
 sudo make clean install
 
