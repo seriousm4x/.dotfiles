@@ -27,6 +27,7 @@ sudo chown "$(whoami)". /opt/yay
 git clone https://aur.archlinux.org/yay.git /opt/yay
 cd /opt/yay
 makepkg -si --noconfirm
+cd "$SCRIPTPATH"
 
 # install packages
 yay -Sy - < base.txt
@@ -43,7 +44,6 @@ if [ "$(systemd-detect-virt)" == "oracle" ]; then
 fi
 
 # stow
-cd "$SCRIPTPATH"
 stow dmenu dwm dwm-bar kitty vim xorg
 
 # suckless stuff
