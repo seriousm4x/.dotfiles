@@ -30,9 +30,9 @@ makepkg -si --noconfirm
 cd "$SCRIPTPATH"
 
 # install packages
-yay -Sy - < base.txt
+yay -Sy --nodiffmenu - < base.txt
 if [ $extraPkg == "y" ]; then
-    yay -Sy - < extra.txt
+    yay -Sy --nodiffmenu - < extra.txt
     systemctl --user enable --now pipewire.service
     systemctl --user enable --now pipewire-pulse.service
 fi
