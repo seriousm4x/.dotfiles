@@ -27,6 +27,7 @@ noto-fonts-emoji
 python
 rsync
 smbclient
+stow
 thunar
 tmux
 traceroute

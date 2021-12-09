@@ -31,7 +31,6 @@ seafile-client
 signal-desktop
 spotify
 steam
-stow
 svt-av1
 telegram-desktop
 thunderbird
