@@ -6,7 +6,7 @@ if [ "$EUID" -eq 0 ]
 fi
 
 while true; do
-    read -p "Install extra packages? [y]/n" yn
+    read -rp "Install extra packages? [y]/n" yn
     case $yn in
         [Yy]* ) extraPkg="y"; break;;
         [Nn]* ) extraPkg="n";;
@@ -36,7 +36,7 @@ if [ $extraPkg == "y" ]; then
     systemctl --user enable --now pipewire-pulse.service
 fi
 
-if [ $(systemd-detect-virt) == "oracle" ]; then
+if [ "$(systemd-detect-virt)" == "oracle" ]; then
     yay -Sy virtualbox-guest-utils
     sudo systemctl enable --now vboxservice.service
     VBoxClient-all
@@ -60,9 +60,11 @@ ln -s ~/.zprezto/runcoms/zprofile ~/.zprofile
 ln -s ~/.zprezto/runcoms/zshenv ~/.zshenv
 ln -s ~/.zprezto/runcoms/zshrc ~/.zshrc
 curl "https://gist.githubusercontent.com/seriousm4x/b93b2af2c226b82d755309f87ef936d3/raw/5cb4fd37b7984aed61997a157429cc032b90b297/.zpreztorc" -o ~/.zpreztorc
-echo "export PATH=$PATH:/home/max/.local/bin" >> ~/.zshrc
-echo 'alias ssh="kitty +kitten ssh"' >> ~/.zshrc
-echo 'alias ll="exa -lah"' >> ~/.zshrc
+{
+    echo 'export PATH=$PATH:/home/max/.local/bin'
+    echo 'alias ssh="kitty +kitten ssh"'
+    echo 'alias ll="exa -lah"'
+} >> ~/.zshrc
 chsh -s /bin/zsh
 
 # startx at login
