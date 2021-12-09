@@ -40,4 +40,5 @@ xorg-server-common
 xorg-xinit
 xorg-xmodmap
 xorg-xrandr
+xorg-xsetroot
 zsh
