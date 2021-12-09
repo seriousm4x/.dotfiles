@@ -42,6 +42,8 @@ if [ "$(systemd-detect-virt)" == "oracle" ]; then
     yay -Sy virtualbox-guest-utils
     sudo systemctl enable --now vboxservice.service
     VBoxClient-all
+elif [ "$(systemd-detect-virt)" == "kvm" ]; then
+    yay -Sy spice-vdagent
 fi
 
 # stow
