@@ -6,10 +6,10 @@ if [ "$EUID" -eq 0 ]
 fi
 
 while true; do
-    read -rp "Install extra packages? [y]/n" yn
+    read -rp "Install extra packages? [y/n]: " yn
     case $yn in
         [Yy]* ) extraPkg="y"; break;;
-        [Nn]* ) extraPkg="n";;
+        [Nn]* ) extraPkg="n"; break;;
         * ) echo "Please answer yes or no.";;
     esac
 done
