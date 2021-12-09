@@ -30,6 +30,7 @@ makepkg -si --noconfirm
 cd "$SCRIPTPATH"
 
 # install packages
+yes | yay -Sy libxft-bgra-git
 yay -Sy --nodiffmenu - < base.txt
 if [ $extraPkg == "y" ]; then
     yay -Sy --nodiffmenu - < extra.txt

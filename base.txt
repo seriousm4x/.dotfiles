@@ -13,7 +13,6 @@ gvfs-smb
 gzip
 htop
 kitty
-libxft-bgra-git
 man-db
 man-pages
 mediainfo
