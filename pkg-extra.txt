@@ -15,11 +15,9 @@ pactl
 pamixer
 pavucontrol
 piper
-pipewire
 pipewire-alsa
 pipewire-jack
 pipewire-jack-dropin
-pipewire-media-session
 pipewire-pulse
 playerctl
 qemu
