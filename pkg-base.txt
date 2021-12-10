@@ -23,8 +23,13 @@ nmap
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
+pamixer
 pipewire
+pipewire-alsa
+pipewire-jack
+pipewire-jack-dropin
 pipewire-media-session
+pipewire-pulse
 python
 rsync
 scrot

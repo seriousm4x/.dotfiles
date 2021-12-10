@@ -12,13 +12,8 @@ networkmanager-openvpn
 obs-studio
 openvpn
 pactl
-pamixer
 pavucontrol
 piper
-pipewire-alsa
-pipewire-jack
-pipewire-jack-dropin
-pipewire-pulse
 playerctl
 qemu
 qjackctl
