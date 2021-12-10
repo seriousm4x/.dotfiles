@@ -74,13 +74,8 @@ sudo chsh -s $(which zsh) $(whoami)
 sudo sed -i "s/EDITOR='nano'/EDITOR='vim'/g" ~/.zprofile
 sudo sed -i "s/VISUAL='nano'/VISUAL='vim'/g" ~/.zprofile
 
-
 # startx at login
-cat <<EOT >> ~/.zprofile
-if [ -z '\${DISPLAY}' ] && [ '\${XDG_VTNR}' -eq 1 ]; then
-  exec startx
-fi
-EOT
+echo "exec startx" >> ~/.zprofile
 
 echo ""
 echo "Installation done. Please reboot."
