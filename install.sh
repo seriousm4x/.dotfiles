@@ -68,7 +68,7 @@ curl "https://gist.githubusercontent.com/seriousm4x/b93b2af2c226b82d755309f87ef9
     echo 'alias ssh="kitty +kitten ssh"'
     echo 'alias ll="exa -lah"'
 } >> ~/.zshrc
-chsh -s /bin/zsh
+sudo chsh -s $(which zsh) $(whoami)
 
 # default editor vim
 sudo sed -i "s/EDITOR='nano'/EDITOR='vim'/g" ~/.zprofile
@@ -77,7 +77,7 @@ sudo sed -i "s/VISUAL='nano'/VISUAL='vim'/g" ~/.zprofile
 
 # startx at login
 cat <<EOT >> ~/.zprofile
-if [ -z '${DISPLAY}' ] && [ '${XDG_VTNR}' -eq 1 ]; then
+if [ -z '\${DISPLAY}' ] && [ '\${XDG_VTNR}' -eq 1 ]; then
   exec startx
 fi
 EOT

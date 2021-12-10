@@ -8,6 +8,7 @@ elif [ "$(systemd-detect-virt)" == "kvm" ]; then
     /usr/bin/spice-vdagent
 elif [ "$(systemd-detect-virt)" == "oracle" ]; then
     xrandr --output VGA-1 --primary --mode 1920x1080 --rate 60 --primary
+    VBoxClient-all
 fi
 
 # load keyboard modmap
