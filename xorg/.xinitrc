@@ -7,7 +7,7 @@ elif [ "$(systemd-detect-virt)" == "kvm" ]; then
     xrandr --output Virtual-1 --primary --mode 1920x1080 --rate 60 --primary
     /usr/bin/spice-vdagent
 else
-    xrandr --output Virtual-1 --primary --mode 1920x1080 --rate 60 --primary
+    xrandr --output VGA-1 --primary --mode 1920x1080 --rate 60 --primary
 fi
 
 # load keyboard modmap
