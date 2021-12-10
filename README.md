@@ -6,9 +6,9 @@ Creates a ready-to-use desktop environment for a fresh arch install, whether you
 
 ## Installation
 
-Install arch with the `archinstall` script included in the iso. When you're asked if you want to install xorg, select it and also the appropriate graphics driver package.
+In case you use the `archinstall` script included in the iso, select the "minimal pre-programmed profile name".
 
-Once you cloned this repo and run the `./install.sh` script, it will ask you if you prefer a base install or a complete install with extra packages. Take a look at [base.txt](base.txt) or [extra.txt](extra.txt) to see whats included.
+Once you cloned this repo and run the `./install.sh` script, it will ask you for the graphics driver and if you prefer a base install or a complete install with extra packages. Take a look at [pkg-base.txt](pkg-base.txt) or [pkg-extra.txt](pkg-extra.txt) to see whats included.
 
 ### VirtualBox
 
