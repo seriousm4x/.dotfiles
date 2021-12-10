@@ -1,0 +1,2 @@
+mesa
+xf86-video-vmware

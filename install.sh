@@ -5,12 +5,29 @@ if [ "$EUID" -eq 0 ]
     exit
 fi
 
+# ask extra packages
 while true; do
     read -rp "Install extra packages? [y/n]: " yn
     case $yn in
         [Yy]* ) extraPkg="y"; break;;
         [Nn]* ) extraPkg="n"; break;;
         * ) echo "Please answer yes or no.";;
+    esac
+done
+
+# ask graphics drivers
+echo "[0] AMD / ATI (open-source)"
+echo "[1] Intel (open-source)"
+echo "[2] Nvidia (proprietary)"
+echo "[3] VMware / VirtualBox (open-source)"
+while true; do
+    read -rp "Select a graphics driver: " graphics
+    case $graphics in
+        [0]* ) extraPkg="amd"; break;;
+        [1]* ) extraPkg="intel"; break;;
+        [2]* ) extraPkg="nvidia"; break;;
+        [3]* ) extraPkg="vm"; break;;
+        * ) echo "Please answer 0, 1, 2 or 3.";;
     esac
 done
 
@@ -29,25 +46,39 @@ cd /opt/yay
 makepkg -si --noconfirm
 cd "$SCRIPTPATH"
 
-# install packages
-yay -Sy --nodiffmenu - < base.txt
-yes | yay -Sy libxft-bgra-git
+# install base
+yay -Sy --nodiffmenu - < pkg-base.txt
+yes | yay -Sy --nodiffmenu libxft-bgra-git
+
+# install graphics
+if [ $graphics == "amd" ]; then
+    yay -Sy --nodiffmenu - < pkg-base-amd.txt
+elif [ $graphics == "intel" ]; then
+    yay -Sy --nodiffmenu - < pkg-base-intel.txt
+elif [ $graphics == "nvidia" ]; then
+    yay -Sy --nodiffmenu - < pkg-base-nvidia.txt
+elif [ $graphics == "vm" ]; then
+    yay -Sy --nodiffmenu - < pkg-base-vm.txt
+fi
+
+# install extra
 if [ $extraPkg == "y" ]; then
-    yay -Sy --nodiffmenu - < extra.txt
+    yay -Sy --nodiffmenu - < pkg-extra.txt
     systemctl --user enable --now pipewire.service
     systemctl --user enable --now pipewire-pulse.service
 fi
 
+# install guest utils for vm
 if [ "$(systemd-detect-virt)" == "oracle" ]; then
-    yay -Sy virtualbox-guest-utils
+    yay -Sy --nodiffmenu virtualbox-guest-utils
     sudo systemctl enable --now vboxservice.service
     VBoxClient-all
 elif [ "$(systemd-detect-virt)" == "kvm" ]; then
-    yay -Sy spice-vdagent
+    yay -Sy --nodiffmenu spice-vdagent
 fi
 
 # stow
-stow dmenu dwm dwm-bar kitty vim xorg
+stow dmenu dwm dwm-bar kitty vim xorg zsh
 
 # suckless stuff
 cd ~/.config/dwm
@@ -62,7 +93,6 @@ ln -s ~/.zprezto/runcoms/zlogout ~/.zlogout
 ln -s ~/.zprezto/runcoms/zprofile ~/.zprofile
 ln -s ~/.zprezto/runcoms/zshenv ~/.zshenv
 ln -s ~/.zprezto/runcoms/zshrc ~/.zshrc
-curl "https://gist.githubusercontent.com/seriousm4x/b93b2af2c226b82d755309f87ef936d3/raw/5cb4fd37b7984aed61997a157429cc032b90b297/.zpreztorc" -o ~/.zpreztorc
 {
     echo 'export PATH=$PATH:/home/max/.local/bin'
     echo 'alias ssh="kitty +kitten ssh"'
@@ -70,13 +100,16 @@ curl "https://gist.githubusercontent.com/seriousm4x/b93b2af2c226b82d755309f87ef9
 } >> ~/.zshrc
 sudo chsh -s $(which zsh) $(whoami)
 
-# default editor vim
+# change default editor vim
 sudo sed -i "s/EDITOR='nano'/EDITOR='vim'/g" ~/.zprofile
 sudo sed -i "s/VISUAL='nano'/VISUAL='vim'/g" ~/.zprofile
 
 # startx at login
 echo "exec startx" >> ~/.zprofile
 
+# done and reboot
 echo ""
-echo "Installation done. Please reboot."
+echo "Installation done. Reboot in 10 seconds."
 echo ""
+sleep 10
+sudo reboot now
