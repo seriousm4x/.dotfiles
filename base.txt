@@ -25,6 +25,7 @@ noto-fonts-cjk
 noto-fonts-emoji
 python
 rsync
+scrot
 smbclient
 stow
 thunar

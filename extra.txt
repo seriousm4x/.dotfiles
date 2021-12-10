@@ -26,7 +26,6 @@ qemu
 qjackctl
 rav1e
 remmina
-scrot
 seafile
 seafile-client
 signal-desktop
