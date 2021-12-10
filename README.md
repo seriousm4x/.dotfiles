@@ -12,4 +12,4 @@ Once you cloned this repo and run the `./install.sh` script, it will ask you for
 
 ### VirtualBox
 
-Make sure to set the display controller to `VMSVGA` for auto resizing features.
+Make sure to set the display controller to `VMSVGA` and turn off 3d acceleration for auto resizing features.
