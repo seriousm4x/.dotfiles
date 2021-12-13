@@ -23,10 +23,10 @@ echo "[3] VMware / VirtualBox (open-source)"
 while true; do
     read -rp "Select a graphics driver: " graphics
     case $graphics in
-        [0]* ) extraPkg="amd"; break;;
-        [1]* ) extraPkg="intel"; break;;
-        [2]* ) extraPkg="nvidia"; break;;
-        [3]* ) extraPkg="vm"; break;;
+        [0]* ) graphics="amd"; break;;
+        [1]* ) graphics="intel"; break;;
+        [2]* ) graphics="nvidia"; break;;
+        [3]* ) graphics="vm"; break;;
         * ) echo "Please answer 0, 1, 2 or 3.";;
     esac
 done
