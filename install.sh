@@ -78,7 +78,7 @@ elif [ "$(systemd-detect-virt)" == "kvm" ]; then
 fi
 
 # stow
-stow dmenu dwm dwm-bar getty gtk-3 hid_apple kitty vim xorg zsh
+stow dmenu dwm dwm-bar getty gtk-3 hid_apple kitty vim vscode xorg zsh
 
 # suckless stuff
 cd ~/.config/dwm

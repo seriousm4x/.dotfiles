@@ -1,0 +1,22 @@
+{
+    "editor.fontFamily": "Hack,'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontSize": 16,
+    "files.insertFinalNewline": true,
+    "git.enableCommitSigning": true,
+    "git.enableSmartCommit": true,
+    "workbench.startupEditor": "none",
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "html.format.endWithNewline": true,
+    "editor.wordWrap": "on",
+    "terminal.integrated.profiles.linux": {
+        "zsh (login)": {
+            "path": "zsh",
+            "args": [
+                "-l"
+            ]
+        }
+    }
+}
