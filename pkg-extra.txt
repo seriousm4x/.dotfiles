@@ -8,7 +8,6 @@ handbrake
 krita
 lutris
 mangohud
-networkmanager-openvpn
 obs-studio
 openvpn
 pactl
@@ -19,7 +18,6 @@ qemu
 qjackctl
 rav1e
 remmina
-seafile
 seafile-client
 signal-desktop
 spotify

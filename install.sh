@@ -78,7 +78,7 @@ elif [ "$(systemd-detect-virt)" == "kvm" ]; then
 fi
 
 # stow
-stow dmenu dwm dwm-bar kitty vim xorg zsh
+stow dmenu dwm dwm-bar getty gtk-3 hid_apple kitty vim xorg zsh
 
 # suckless stuff
 cd ~/.config/dwm
@@ -106,6 +106,9 @@ sudo sed -i "s/VISUAL='nano'/VISUAL='vim'/g" ~/.zprofile
 
 # startx at login
 echo "exec startx" >> ~/.zprofile
+
+# rebuild mkinitcpio
+sudo mkinitcpio -P  
 
 # done and reboot
 echo ""
