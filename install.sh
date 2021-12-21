@@ -78,7 +78,7 @@ elif [ "$(systemd-detect-virt)" == "kvm" ]; then
 fi
 
 # stow
-stow dmenu dwm dwm-bar getty gtk-3 hid_apple kitty vim vscode xorg zsh
+stow dmenu dwm dwm-bar gtk-3 kitty vim vscode xorg zsh
 
 # suckless stuff
 cd ~/.config/dwm
@@ -98,17 +98,29 @@ ln -s ~/.zprezto/runcoms/zshrc ~/.zshrc
     echo 'alias ssh="kitty +kitten ssh"'
     echo 'alias ll="exa -lah"'
 } >> ~/.zshrc
-sudo chsh -s $(which zsh) $(whoami)
+sudo chsh -s "$(which zsh)" "$(whoami)"
 
 # change default editor vim
 sudo sed -i "s/EDITOR='nano'/EDITOR='vim'/g" ~/.zprofile
 sudo sed -i "s/VISUAL='nano'/VISUAL='vim'/g" ~/.zprofile
 
-# startx at login
-echo "exec startx" >> ~/.zprofile
+# change keyboard fn key behavior
+sudo mkdir -p /etc/modprobe.d/
+echo "options hid_apple fnmode=2" | sudo tee -a hid_apple.conf
 
 # rebuild mkinitcpio
-sudo mkinitcpio -P  
+sudo mkinitcpio -P
+
+# auto login
+sudo mkdir -p /etc/systemd/system/getty@tty1.service.default/
+sudo tee -a /etc/systemd/system/getty@tty1.service.default/override.conf > /dev/null <<EOT
+[Service]
+ExecStart=
+ExecStart=-/usr/bin/agetty --autologin max --noclear %I $TERM
+EOT
+
+# startx at login
+echo "exec startx" >> ~/.zprofile
 
 # done and reboot
 echo ""
