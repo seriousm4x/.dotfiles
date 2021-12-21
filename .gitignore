@@ -1,1 +1,3 @@
 .dwm-bar.log
+vscode/.config/*
+!vscode/.config/User/settings.json
