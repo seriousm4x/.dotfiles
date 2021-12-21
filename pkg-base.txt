@@ -31,6 +31,7 @@ pipewire-jack-dropin
 pipewire-media-session
 pipewire-pulse
 python
+python-pip
 rsync
 scrot
 smbclient
