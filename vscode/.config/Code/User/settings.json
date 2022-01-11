@@ -23,5 +23,14 @@
     "[python]": {
         "editor.defaultFormatter": "ms-python.python"
     },
-    "git.enableCommitSigning": true
+    "git.enableCommitSigning": true,
+    "extensions.ignoreRecommendations": true,
+    "svelte.enable-ts-plugin": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "react-native-tools.showUserTips": false
 }
