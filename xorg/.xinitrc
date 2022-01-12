@@ -14,9 +14,10 @@ fi
 # load keyboard modmap
 [[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
 
-# start seafile applet
-/usr/bin/seafile-applet
+# start applets
+/usr/bin/nm-applet &
+/usr/bin/seafile-applet &
 
 # start dwm
-~/.config/dwm-bar/dwm_bar.sh > .dwm-bar.log 2>&1 &
-exec dwm > ~/.dwm.log
+~/.config/dwm-bar/dwm_bar.sh &
+exec dwm

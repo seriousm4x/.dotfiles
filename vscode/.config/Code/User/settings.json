@@ -32,5 +32,6 @@
     "[json]": {
         "editor.defaultFormatter": "HookyQR.beautify"
     },
-    "react-native-tools.showUserTips": false
+    "react-native-tools.showUserTips": false,
+    "files.trimFinalNewlines": true
 }
