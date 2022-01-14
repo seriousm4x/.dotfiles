@@ -39,6 +39,7 @@ stow
 thunar
 tmux
 traceroute
+ttf-font-awesome
 ttf-hack
 unrar
 unzip

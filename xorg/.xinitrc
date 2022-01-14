@@ -19,5 +19,5 @@ fi
 /usr/bin/seafile-applet &
 
 # start dwm
-~/.config/dwm-bar/dwm_bar.sh &
+~/.config/dwm-bar/bar.sh &
 exec dwm
