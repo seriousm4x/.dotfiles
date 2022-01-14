@@ -15,7 +15,7 @@ bar_vpn () {
         VPN=$wg_vpn
     fi
     if [ "$VPN" != "" ]; then
-        printf " %s" "$VPN $SEP "
+        printf " %s" "$VPN $SEP "
     fi
 }
 
@@ -43,7 +43,21 @@ bar_date () {
     printf " %s" "$(date "+%a, %d.%m.%Y, %T") $SEP"
 }
 
+parallelize () {
+    while true; do
+        yay -Sy > /dev/null
+        updates=$(yay -Qu | wc -l)
+        if [ "$updates" -eq 0 ]; then
+            echo " Updated $SEP " >| /tmp/dwm-bar-updates
+        else
+            echo "  $updates Updates $SEP " >| /tmp/dwm-bar-updates
+        fi
+        sleep 30m
+    done
+}
+parallelize &
+
 while true; do
-    xsetroot -name "$(bar_vpn)$(bar_mem)$(bar_cpu)$(bar_vol)$(bar_date)"
+    xsetroot -name "$(cat /tmp/dwm-bar-updates)$(bar_vpn)$(bar_mem)$(bar_cpu)$(bar_vol)$(bar_date)"
     sleep 1
 done
