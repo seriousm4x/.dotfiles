@@ -3,6 +3,8 @@ aria2
 discord
 docker
 docker-compose
+edk2-armvirt
+edk2-ovmf
 freerdp
 handbrake
 krita
