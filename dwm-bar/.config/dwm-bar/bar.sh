@@ -24,7 +24,7 @@ bar_mem () {
 }
 
 bar_cpu () {
-    printf " $(top -bn1 | grep Cpu | awk '{print $2}')%% $SEP "
+    printf " $(top -bn1 | grep Cpu | awk '{print $2}')%% $(sensors -u k10temp-pci-00c3 | awk 'NR == 4 {print int($2)}')°C $SEP "
 }
 
 bar_vol () {
@@ -58,6 +58,6 @@ parallelize () {
 parallelize &
 
 while true; do
-    xsetroot -name "$(cat /tmp/dwm-bar-updates)$(bar_vpn)$(bar_mem)$(bar_cpu)$(bar_vol)$(bar_date)"
+    xsetroot -name "$(cat /tmp/dwm-bar-updates)$(bar_vpn)$(bar_cpu)$(bar_mem)$(bar_vol)$(bar_date)"
     sleep 1
 done

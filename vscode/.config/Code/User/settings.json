@@ -1,5 +1,5 @@
 {
-    "editor.fontFamily": "Hack,'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontFamily": "Hack,'Font Awesome 5 Free Solid','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontSize": 16,
     "files.insertFinalNewline": true,
     "git.enableSmartCommit": true,
