@@ -119,8 +119,7 @@ static Key keys[] = {
 	{ 0,                            XF86XK_AudioNext, spawn,   {.v = mednextcmd } },
 	{ 0,                            XF86XK_AudioPrev, spawn,   {.v = medprevcmd } },
 	/* Keybindings for screenshot */
-    { 0,                            XK_Print,  spawn,          SHCMD("scrot -s ~/$(date +%d.%m.%y_%H:%M:%S).png") },
-    { ControlMask,                  XK_Print,  spawn,          SHCMD("scrot -u ~/$(date +%d.%m.%y_%H:%M:%S).png") },
+    { 0,                            XK_Print,  spawn,          SHCMD("flameshot gui") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)

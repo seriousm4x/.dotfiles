@@ -6,6 +6,7 @@ exfat-utils
 feh
 ffmpeg
 firefox
+flameshot
 git
 gvfs
 gvfs-nfs
@@ -33,7 +34,6 @@ pipewire-pulse
 python
 python-pip
 rsync
-scrot
 smbclient
 stow
 thunar

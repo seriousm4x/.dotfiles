@@ -17,6 +17,7 @@ fi
 # start applets
 /usr/bin/nm-applet &
 /usr/bin/seafile-applet &
+/usr/bin/flameshot &
 
 # start dwm
 ~/.config/dwm-bar/bar.sh &
