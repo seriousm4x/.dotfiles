@@ -6,7 +6,6 @@
     "workbench.startupEditor": "none",
     "terminal.integrated.defaultProfile.linux": "zsh",
     "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
     "editor.formatOnType": true,
     "html.format.endWithNewline": true,
     "editor.wordWrap": "on",
@@ -33,5 +32,6 @@
         "editor.defaultFormatter": "HookyQR.beautify"
     },
     "react-native-tools.showUserTips": false,
-    "files.trimFinalNewlines": true
+    "files.trimFinalNewlines": true,
+    "redhat.telemetry.enabled": false
 }
