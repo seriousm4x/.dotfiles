@@ -120,7 +120,12 @@ ExecStart=-/usr/bin/agetty --autologin max --noclear %I $TERM
 EOT
 
 # startx at login
-echo "exec startx" >> ~/.zprofile
+cat <<EOT >> ~/.zprofile
+if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+    exec startx
+fi
+EOT
+
 
 # done and reboot
 echo ""
