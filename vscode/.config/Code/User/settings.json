@@ -22,7 +22,6 @@
     "[python]": {
         "editor.defaultFormatter": "ms-python.python"
     },
-    "git.enableCommitSigning": true,
     "extensions.ignoreRecommendations": true,
     "svelte.enable-ts-plugin": true,
     "[javascript]": {
@@ -33,5 +32,16 @@
     },
     "react-native-tools.showUserTips": false,
     "files.trimFinalNewlines": true,
-    "redhat.telemetry.enabled": false
+    "redhat.telemetry.enabled": false,
+    "git.enableCommitSigning": true,
+    "files.trimTrailingWhitespace": true,
+    "gitlens.currentLine.enabled": false,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.codeLens.enabled": false,
+    "workbench.tree.indent": 14,
+    "workbench.tree.renderIndentGuides": "always",
+    "files.exclude": {
+        "**/.git": false
+    },
+    "diffEditor.ignoreTrimWhitespace": false
 }
