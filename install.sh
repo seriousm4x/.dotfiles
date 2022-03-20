@@ -78,7 +78,7 @@ elif [ "$(systemd-detect-virt)" == "kvm" ]; then
 fi
 
 # stow
-stow chromium dmenu dwm dwm-bar gtk-3 kitty gpg-agent vim vscode xorg zsh
+stow alacritty chromium dmenu dwm dwm-bar gtk-3 gpg-agent vim vscode xorg zsh
 
 # suckless stuff
 cd ~/.config/dwm
@@ -95,7 +95,6 @@ ln -s ~/.zprezto/runcoms/zshenv ~/.zshenv
 ln -s ~/.zprezto/runcoms/zshrc ~/.zshrc
 {
     echo 'export PATH=$PATH:/home/max/.local/bin'
-    echo 'alias ssh="kitty +kitten ssh"'
     echo 'alias ll="exa -lah"'
 } >> ~/.zshrc
 sudo chsh -s "$(which zsh)" "$(whoami)"
