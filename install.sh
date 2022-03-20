@@ -95,6 +95,7 @@ ln -s ~/.zprezto/runcoms/zshenv ~/.zshenv
 ln -s ~/.zprezto/runcoms/zshrc ~/.zshrc
 {
     echo 'export PATH=$PATH:/home/max/.local/bin'
+    echo 'alias ssh="TERM=xterm-256color ssh"'
     echo 'alias ll="exa -lah"'
 } >> ~/.zshrc
 sudo chsh -s "$(which zsh)" "$(whoami)"
