@@ -1,3 +1,10 @@
 .dwm-bar.log
+
 vscode/.config/*
 !vscode/.config/User/settings.json
+
+gpg-agent/*
+!gpg-agent/gpg-agent.conf
+
+gtk-3/.config/gtk-3.0/*
+!gtk-3/.config/gtk-3.0/settings.ini
