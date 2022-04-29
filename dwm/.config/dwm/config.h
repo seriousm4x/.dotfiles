@@ -45,11 +45,11 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      		instance    	title       tags mask     isfloating   monitor */
-	{ "firefox",  		NULL,			NULL,       1 << 0,       0,           0 },
-	{ "Alacritty",		NULL,			NULL,       1 << 1,       0,           -1 },
-	{ "Code",	 	 	NULL,			NULL,       1 << 2,       0,           0 },
-	{ "Thunar",			NULL,			NULL,       1 << 3,       0,           0 },
-	{ "Thunderbird",	NULL,			NULL,       1 << 4,       0,           0 },
+	{ "Brave",  		NULL,			NULL,       1 << 0,       0,           -1 },
+	{ "kitty",  		NULL,			NULL,       1 << 1,       0,           -1 },
+	{ "Code",	 	 	NULL,			NULL,       1 << 2,       0,           -1 },
+	{ "Thunar",			NULL,			NULL,       1 << 3,       0,           -1 },
+	{ "Thunderbird",	NULL,			NULL,       1 << 4,       0,           -1 },
 	{ "discord",		NULL,			NULL,       1 << 5,       0,           1 },
 };
 
@@ -80,7 +80,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *termcmd[]  = { "kitty", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
