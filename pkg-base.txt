@@ -1,4 +1,3 @@
-alacritty
 base-devel
 cifs-utils
 curl
@@ -14,6 +13,7 @@ gvfs-nfs
 gvfs-smb
 gzip
 htop
+kitty
 man-db
 man-pages
 mediainfo
