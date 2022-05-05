@@ -57,6 +57,10 @@ parallelize () {
 }
 parallelize &
 
+until [ -f /tmp/dwm-bar-updates ]; do
+    sleep 0.5
+done
+
 while true; do
     xsetroot -name "$(cat /tmp/dwm-bar-updates)$(bar_vpn)$(bar_cpu)$(bar_mem)$(bar_vol)$(bar_date)"
     sleep 1
