@@ -78,7 +78,7 @@ elif [ "$(systemd-detect-virt)" == "kvm" ]; then
 fi
 
 # stow
-stow alacritty chromium dmenu dwm dwm-bar gtk-3 gpg-agent vim vscode xorg zsh
+stow chromium dmenu dwm dwm-bar gtk-3 gpg-agent kitty vim vscode xorg zsh
 
 # suckless stuff
 cd ~/.config/dwm
@@ -121,7 +121,7 @@ EOT
 
 # startx at login
 cat <<EOT >> ~/.zprofile
-if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+if [[ ! \$DISPLAY && \$XDG_VTNR -eq 1 ]]; then
     exec startx
 fi
 EOT
