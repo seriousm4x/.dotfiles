@@ -18,6 +18,7 @@ man-db
 man-pages
 mediainfo
 mpv
+network-manager-applet
 neofetch
 nm-connection-editor
 nmap
