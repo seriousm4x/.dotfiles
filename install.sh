@@ -79,7 +79,7 @@ elif [ "$(systemd-detect-virt)" == "kvm" ]; then
 fi
 
 # stow
-stow chromium dwm dwm-bar gtk-3 gpg-agent rofi vim vscode xorg zsh
+stow chromium dwm dwm-bar gtk-3 gpg-agent kitty rofi vim vscode xorg zsh
 
 # suckless stuff
 cd ~/.config/dwm
