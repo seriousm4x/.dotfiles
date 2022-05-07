@@ -3,8 +3,8 @@ configuration{
     lines: 5;
     font: "Hack 14";
     show-icons: true;
-    icon-theme: "Oranchelo";
-    terminal: "st";
+    icon-theme: "Noto Fonts";
+    terminal: "kitty";
     drun-display-format: "{icon} {name}";
     location: 0;
     disable-history: false;
