@@ -12,7 +12,6 @@ lutris
 mangohud
 obs-studio
 openvpn
-pactl
 pavucontrol
 piper
 playerctl
