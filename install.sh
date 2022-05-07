@@ -79,12 +79,14 @@ elif [ "$(systemd-detect-virt)" == "kvm" ]; then
 fi
 
 # stow
+<<<<<<< HEAD
 stow chromium dmenu dwm dwm-bar gtk-3 gpg-agent kitty vim vscode xorg zsh
+=======
+stow alacritty chromium dwm dwm-bar gtk-3 gpg-agent rofi vim vscode xorg zsh
+>>>>>>> 493178e (replace dmenu with rofi)
 
 # suckless stuff
 cd ~/.config/dwm
-sudo make clean install
-cd ~/.config/dmenu
 sudo make clean install
 
 # zsh / prezto

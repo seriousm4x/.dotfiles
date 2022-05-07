@@ -34,6 +34,7 @@ pipewire-media-session
 pipewire-pulse
 python
 python-pip
+rofi
 rsync
 smbclient
 stow
