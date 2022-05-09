@@ -41,7 +41,7 @@ sudo pacman -Syu --noconfirm
 
 # yay
 sudo mkdir -p /opt/yay
-sudo chown "$(whoami)". /opt/yay
+sudo chown "$(whoami)":"$(whoami)" /opt/yay
 git clone https://aur.archlinux.org/yay.git /opt/yay
 cd /opt/yay
 makepkg -si --noconfirm
