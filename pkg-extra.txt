@@ -15,8 +15,8 @@ openvpn
 pavucontrol
 piper
 playerctl
-qemu
-qemu-arch-extra
+qemu-desktop
+qemu-emulators-full
 qjackctl
 rav1e
 remmina
