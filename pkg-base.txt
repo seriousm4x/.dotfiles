@@ -18,8 +18,8 @@ man-db
 man-pages
 mediainfo
 mpv
-network-manager-applet
 neofetch
+network-manager-applet
 nm-connection-editor
 nmap
 noto-fonts
@@ -30,7 +30,6 @@ pipewire
 pipewire-alsa
 pipewire-jack
 pipewire-jack-dropin
-pipewire-media-session
 pipewire-pulse
 python
 python-pip
@@ -47,6 +46,7 @@ unrar
 unzip
 vim
 wget
+wireplumber
 xorg-server
 xorg-server-common
 xorg-xinit
