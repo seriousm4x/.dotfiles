@@ -29,7 +29,6 @@ pamixer
 pipewire
 pipewire-alsa
 pipewire-jack
-pipewire-jack-dropin
 pipewire-pulse
 python
 python-pip
