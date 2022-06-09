@@ -24,7 +24,7 @@ bar_mem () {
 }
 
 bar_cpu () {
-    printf " $(top -bn1 | grep Cpu | awk '{print $2}')%% $(sensors -u k10temp-pci-00c3 | awk 'NR == 4 {print int($2)}')°C $SEP "
+    printf " $(top -bn1 | grep 'Cpu(s)' | sed 's/.*, *\([0-9.]*\)%* id.*/\1/' | awk '{print 100 - $1}')%% $(sensors -u k10temp-pci-00c3 | awk 'NR == 4 {print int($2)}')°C $SEP "
 }
 
 bar_vol () {
