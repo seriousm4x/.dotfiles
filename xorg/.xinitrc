@@ -7,7 +7,7 @@ elif [ "$(systemd-detect-virt)" == "kvm" ]; then
     xrandr --output Virtual-1 --primary --mode 1920x1080 --rate 60
     /usr/bin/spice-vdagent
 elif [ "$(systemd-detect-virt)" == "oracle" ]; then
-    xrandr --output VGA-1 --primary --mode 1920x1080 --rate 60
+    xrandr --output Virtual1 --primary --mode 1920x1080 --rate 60
     VBoxClient-all
 fi
 
