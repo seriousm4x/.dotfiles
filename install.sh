@@ -1,7 +1,7 @@
 #!/bin/bash
 
-if [ "$EUID" -eq 0 ]
-    then echo "Please don't run as root"
+if [ "$EUID" -eq 0 ]; then
+    echo "Please don't run as root"
     exit
 fi
 
@@ -105,7 +105,7 @@ sudo sed -i "s/VISUAL='nano'/VISUAL='vim'/g" ~/.zprofile
 
 # change keyboard fn key behavior
 sudo mkdir -p /etc/modprobe.d/
-echo "options hid_apple fnmode=2" | sudo tee -a hid_apple.conf
+echo "options hid_apple fnmode=2" | sudo tee -a /etc/modprobe.d/hid_apple.conf
 
 # rebuild mkinitcpio
 sudo mkinitcpio -P
