@@ -8,3 +8,7 @@ gpg-agent/*
 
 gtk-3/.config/gtk-3.0/*
 !gtk-3/.config/gtk-3.0/settings.ini
+
+rofi/*
+!rofi/.config/rofi/config.rasi
+!rofi/.local/share/rofi/themes/

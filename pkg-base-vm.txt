@@ -1,2 +1,4 @@
+gtkmm3
 mesa
+open-vm-tools
 xf86-video-vmware

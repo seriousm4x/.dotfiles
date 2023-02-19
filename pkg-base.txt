@@ -8,12 +8,12 @@ ffmpeg
 firefox
 flameshot
 git
+gnome-keyring
 gvfs
 gvfs-nfs
 gvfs-smb
 gzip
 htop
-kitty
 man-db
 man-pages
 mediainfo
@@ -34,6 +34,7 @@ python
 python-pip
 rofi
 rsync
+seahorse
 smbclient
 stow
 thunar
@@ -44,6 +45,7 @@ ttf-hack
 unrar
 unzip
 vim
+wezterm
 wget
 wireplumber
 xorg-server

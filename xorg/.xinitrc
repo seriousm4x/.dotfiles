@@ -9,16 +9,20 @@ elif [ "$(systemd-detect-virt)" == "kvm" ]; then
 elif [ "$(systemd-detect-virt)" == "oracle" ]; then
     xrandr --output Virtual1 --primary --mode 1920x1080 --rate 60
     VBoxClient-all
+elif [ "$(systemd-detect-virt)" == "vmware" ]; then
+    vmware-user &
 fi
 
 # load keyboard modmap
 [[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
 
+# needed for seahorse keyring
+source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
+
 # start applets
 /usr/bin/nm-applet &
-/usr/bin/seafile-applet &
 /usr/bin/flameshot &
 
 # start dwm
-~/.config/dwm-bar/bar.sh &
+pkill dwm-bar.sh; ~/.config/dwm-bar/bar.sh &
 exec dwm

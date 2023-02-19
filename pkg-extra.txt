@@ -20,7 +20,6 @@ qemu-emulators-full
 qjackctl
 rav1e
 remmina
-seafile-client
 signal-desktop
 spotify
 steam

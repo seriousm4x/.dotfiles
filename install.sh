@@ -74,12 +74,15 @@ if [ "$(systemd-detect-virt)" == "oracle" ]; then
     yay -Sy --nodiffmenu virtualbox-guest-utils
     sudo systemctl enable --now vboxservice.service
     VBoxClient-all
+elif [ "$(systemd-detect-virt)" == "vmware" ]; then
+    sudo systemctl enable --now vmtoolsd.service
+    sudo systemctl enable --now vmware-vmblock-fuse.service
 elif [ "$(systemd-detect-virt)" == "kvm" ]; then
     yay -Sy --nodiffmenu spice-vdagent
 fi
 
 # stow
-stow chromium dwm dwm-bar gtk-3 gpg-agent kitty rofi vim vscode xorg zsh
+stow chromium dwm dwm-bar gtk-3 gpg-agent rofi vim vscode wezterm xorg zsh
 
 # suckless stuff
 cd ~/.config/dwm
